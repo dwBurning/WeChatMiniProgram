@@ -1,0 +1,116 @@
+@import '../common/index.wxss';
+
+/*总体主盒子*/
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #f8f8f8;
+  color: #939393;
+}
+
+.swiper {
+  height: 400rpx;
+  width: 100%;
+}
+
+.swiper image {
+  height: 100%;
+  width: 100%;
+}
+
+/*左侧栏主盒子*/
+
+.nav_left {
+  /*设置行内块级元素（没使用定位）*/
+  display: inline-block;
+  width: 25%;
+  height: 100%;
+  /*主盒子设置背景色为灰色*/
+  background: #f5f5f5;
+  text-align: center;
+}
+
+/*左侧栏list的item*/
+
+.nav_left .nav_left_items {
+  /*每个高30px*/
+  height: 30px;
+  /*垂直居中*/
+  line-height: 30px;
+  /*再设上下padding增加高度，总高42px*/
+  padding: 6px 0;
+  /*只设下边线*/
+  border-bottom: 1px solid #dedede;
+}
+
+/*左侧栏list的item被选中时*/
+
+.nav_left .nav_left_items.active {
+  /*背景色变成白色*/
+  background: #f38d76;
+  color: #f8f8f8;
+}
+
+/*右侧栏主盒子*/
+
+.nav_right {
+  /*右侧盒子使用了绝对定位*/
+  position: absolute;
+  top: 400rpx;
+  right: 0;
+  flex: 1;
+  /*宽度75%，高度占满，并使用百分比布局*/
+  width: 75%;
+  height: 110%;
+  padding: 2px;
+  box-sizing: border-box;
+  background: #f8f8f8;
+}
+
+/*右侧栏list的item*/
+
+.nav_right .nav_right_items {
+  /*浮动向左*/
+  float: left;
+  /*每个item设置宽度是33.33%*/
+  width: 50%;
+  height: 150px;
+  text-align: left;
+  color: black;
+}
+
+.nav_right_items_image {
+  /*被图片设置宽高*/
+  width: 100px;
+  height: 100px;
+  border-radius: 5%;
+}
+
+.nav_right .nav_right_items text {
+  /*给text设成块级元素*/
+  display: block;
+  margin-top: 2px;
+  font-size: 14px;
+  /*设置文字溢出部分为...*/
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/*设置价格*/
+
+.price_text {
+  color: #f38d76;
+  float: left;
+}
+
+/*设置添加图标*/
+
+.add_image {
+  width: 20px;
+  height: 20px;
+  float: right;
+  margin: 0px 15px 0px 0px;
+}

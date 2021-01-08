@@ -1,0 +1,29 @@
+/* pages/mine/userInfo/userInfo.wxss */
+
+.section {
+  padding: 0rpx;
+}
+
+.section .line {
+  margin-left: 30rpx;
+  padding-right: 30rpx;
+  line-height:4;
+  border-bottom: 1px solid #efefef;
+  display: flex;
+  align-items: center;
+  justify-content : space-between
+}
+
+.section .line .avatar {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 50%;
+}
+
+.section .line:last-child {
+  border-bottom: none;
+}
+
+.section .line .tl {
+  color: #aaa;
+}

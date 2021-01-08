@@ -1,0 +1,17 @@
+<!--pages/mine/userInfo/userInfo.wxml-->
+<view>
+  <view class="section">
+    <view class="line">头像
+      <image class="avatar" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+  </view>
+  <view class="section">
+    <view class="line">昵称
+      <text class="tl">{{userInfo.nickName}}</text>
+    </view>
+    <view class="line">性别
+      <text class="tl">{{gender}}</text>
+    </view>
+  </view>
+  <button type="primary" open-type="getUserInfo" bindgetuserinfo="getUserInfo">获取微信头像与昵称</button>
+</view>

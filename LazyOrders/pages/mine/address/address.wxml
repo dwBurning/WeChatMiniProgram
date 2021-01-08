@@ -1,0 +1,62 @@
+<view class="container">
+  <form>
+    <view class="page-section">
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">姓名</view>
+          </view>
+          <view class="weui-cell__bd">
+            {{ addressInfo.userName }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">邮编</view>
+          </view>
+          <view class="weui-cell__bd">
+            {{ addressInfo.postalCode }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input region">
+          <view class="weui-cell__hd">
+            <view class="weui-label">地区</view>
+          </view>
+          <view class="weui-cell__bd">
+            {{ addressInfo.provinceName }} {{ addressInfo.cityName }} {{ addressInfo.countyName }}
+          </view>
+        </view>
+
+
+        <view class="weui-cell weui-cell_input detail">
+          <view class="weui-cell__hd">
+            <view class="weui-label">收货地址</view>
+          </view>
+          <view class="weui-cell__bd">
+            {{ addressInfo.detailInfo }}
+          </view>
+        </view>
+
+        <view class="weui-cell weui-cell_input">
+          <view class="weui-cell__hd">
+            <view class="weui-label">手机号码</view>
+          </view>
+          <view class="weui-cell__bd">
+            {{ addressInfo.telNumber }}
+          </view>
+        </view>
+
+      </view>
+    </view>
+  </form>
+
+  <view class="btn-area">
+    <button type="primary" bindtap="chooseAddress">获取收货地址</button>
+  </view>
+
+  <view class="btn-area">
+    <button disabled="{{!hasAddress}}" type="primary" bindtap="chooseAddressed">确定</button>
+  </view>
+</view>

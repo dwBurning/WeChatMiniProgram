@@ -1,0 +1,16 @@
+<view class="main">
+  <view class="header">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" />
+    <view class="nickname">{{userInfo.nickName}}</view>
+  </view>
+
+  <view class="navigator-box">
+    <block wx:for-items="{{pages}}" wx:key="*item">
+      <navigator url="{{item.page}}/{{item.page}}" class="navigator">
+        <image class="navigator-img" src="../../images/{{item.page}}.png"></image>
+        <view class="navigator-text">{{item.text}}</view>
+        <view class="navigator-arrow"></view>
+      </navigator>
+    </block>
+  </view>
+</view>

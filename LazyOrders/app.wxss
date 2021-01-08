@@ -1,0 +1,10 @@
+page {
+  background-color: #f8f8f8;
+}
+
+.section {
+  background: #fff;
+  border-bottom: 1rpx solid #dedede;
+  margin-bottom: 15rpx;
+  padding: 20rpx;
+}

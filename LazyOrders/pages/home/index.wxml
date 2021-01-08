@@ -1,0 +1,43 @@
+<view class="container">
+  <!-- swiper 轮播图片 -->
+  <view class="top">
+    <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000">
+      <block wx:for="{{movies}}" wx:for-index="index">
+        <swiper-item>
+          <image src="{{item.url}}" class="slide-image" mode="aspectFill" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='bottom'>
+    <!--左侧栏-->
+    <view class="nav_left">
+      <block wx:for="{{navLeftItems}}">
+        <view class="nav_left_items {{curNav == item.CategoryId ? 'active' : ''}}" bindtap="switchRightTab" data-index="{{index}}" data-id="{{item.CategoryId}}">{{item.CategoryName}}</view>
+      </block>
+    </view>
+
+    <!--右侧栏-->
+    <view class="nav_right">
+      <scroll-view scroll-y="true" style="height: 100%">
+        <block wx:for="{{navRightItems[curIndex].Menus}}">
+
+          <view class="nav_right_items">
+            <navigator url="details/details?menuId={{item.MenuId}}">
+              <image class='nav_right_items_image' src="{{item.ImgPath}}"></image>
+            </navigator>
+            <text>{{item.MenuName}}</text>
+            <text class='price_text'>{{item.Price}}元/份</text>
+            <navigator url="details/details?menuId={{item.MenuId}}">
+              <image class='add_image' src='/images/add.png'></image>
+            </navigator>
+          </view>
+
+        </block>
+
+      </scroll-view>
+
+    </view>
+  </view>
+</view>

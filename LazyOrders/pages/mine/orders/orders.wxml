@@ -1,0 +1,26 @@
+<!--pages/mine/orders/orders.wxml-->
+<view class="main">
+  <view wx:if="{{hasList}}" class="orders-box">
+    <view class="orders">我的订单</view>
+    <view class="orders-list" wx:for="{{orders}}" wx:for-item="ordersItem" wx:key="ordersItem.OrderId">
+      <view class="orders-number">订单编号：{{ordersItem.OrderId}}</view>
+      <view class="orders-detail" wx:for="{{ordersItem.Menus}}" wx:key="{{ordersItem.Menus.MenuId}}">
+        <image src="{{item.ImgPath}}"></image>
+        <view class="">{{item.MenuName}}</view>
+        <view class="">{{item.Price}}</view>
+      </view>
+      <view class="orders-footer">
+        <text class="orders-footer-total">实付：￥{{ordersItem.TotalPrice}}</text>
+        <view wx:if="{{!ordersItem.IsPaid}}">
+          <button size="mini" class="orders-btn" bindtap="payOrders">付款</button>
+        </view>
+        <view wx:else>
+          <text>交易已完成</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class="orders-no-data">您还没有提交订单哦~</view>
+  </view>
+</view>
